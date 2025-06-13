@@ -1,1 +1,8 @@
-<p>blog works!</p>
+<div class="main">
+  @for(item of covid; track item) {
+  <div class="card">
+    Land: {{item.country}}<br>
+    Døde: {{item.deaths}}
+  </div>
+  }
+</div>

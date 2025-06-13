@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Api} from '../../services/api';
 import {Iauthor} from '../../interfaces/iauthor';
+import {Icovid} from '../../interfaces/icovid';
 
 @Component({
   selector: 'app-blog',
@@ -10,7 +11,7 @@ import {Iauthor} from '../../interfaces/iauthor';
 })
 export class Blog implements OnInit {
 
-  authors: Iauthor[] = [];
+  covid: Icovid[] = [];
 
   constructor(private api: Api) {
   }
@@ -23,7 +24,8 @@ export class Blog implements OnInit {
     this.api.GetAllAuthors().subscribe(data => {
       //Tjekker om der er data eller om den er undefined
       if(data[0] !== undefined) {
-        this.authors = data; //Data indsættes i authors array
+        this.covid = data; //Data indsættes i authors array
+        console.log(this.covid);
       } else {
         console.log("der er ikke noget data"); //intet data besked udskrives i console.
       }

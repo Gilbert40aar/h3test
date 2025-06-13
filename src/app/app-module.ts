@@ -9,6 +9,7 @@ import { About } from './home/about/about';
 import { Blog } from './home/blog/blog';
 import { Contact } from './home/contact/contact';
 import {HttpClient, provideHttpClient} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {HttpClient, provideHttpClient} from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideHttpClient(),
