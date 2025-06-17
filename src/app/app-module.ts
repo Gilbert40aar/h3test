@@ -9,6 +9,7 @@ import { About } from './home/about/about';
 import { Blog } from './home/blog/blog';
 import { Contact } from './home/contact/contact';
 import {HttpClient, provideHttpClient} from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {HttpClient, provideHttpClient} from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideHttpClient(),

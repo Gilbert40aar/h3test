@@ -1,1 +1,32 @@
-<p>contact works!</p>
+<div class="form">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <label>Navn</label>
+    <input id="name" formControlName="name">
+    <div *ngIf="myForm.get('name')?.errors?.['required'] && myForm.get('name')?.touched">
+      Navn er påkrævet
+    </div>
+    <div *ngIf="myForm.get('name')?.errors?.['minlength']">
+      Navn skal være mindst 3 tegn
+    </div>
+
+    <label for="email">Email</label>
+    <input id="email" formControlName="email">
+    <div *ngIf="myForm.get('email')?.errors?.['required']">
+      Email er påkrævet.
+    </div>
+    <div *ngIf="myForm.get('email')?.errors?.['email']">
+      Indtast en gyldig email.
+    </div>
+
+    <label for="age">Alder</label>
+    <input id="age" type="number" formControlName="age">
+    <div *ngIf="myForm.get('age')?.errors?.['min']">
+      Du skal være mindst 18 år.
+    </div>
+    <div *ngIf="myForm.get('age')?.errors?.['max']">
+      Maksimumsalder er 65 år.
+    </div>
+
+    <button type="submit" [disabled]="myForm.invalid">Send</button>
+  </form>
+</div>
